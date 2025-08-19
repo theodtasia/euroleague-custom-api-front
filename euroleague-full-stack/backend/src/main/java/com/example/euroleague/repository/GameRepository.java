@@ -10,7 +10,6 @@ import java.util.List;
 
 public interface GameRepository extends JpaRepository<Game, Long> {
 
-    // Custom query using @Query annotation to find games by date
     @Query("SELECT g FROM Game g WHERE g.gameDate = :date")
     List<Game> findByDate(@Param("date") LocalDate date);
 }
